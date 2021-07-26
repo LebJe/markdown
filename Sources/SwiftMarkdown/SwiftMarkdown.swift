@@ -1,3 +1,11 @@
+#if os(macOS)
+import Darwin.C
+#elseif os(Linux) || os(Android)
+import Glibc
+#elseif os(Windows)
+import ucrt
+#endif
+
 import cmark
 
 public enum MarkdownError: Error {
